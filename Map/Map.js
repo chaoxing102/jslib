@@ -8,12 +8,9 @@
         this.size++;
     }
 
-    Map.prototype.size = function(){
-        return this.size;
-    }
-
     Map.prototype.clear = function(){
         this.data = {};
+        this.size = 0;
     }
 
     Map.prototype.remove = function(key){
