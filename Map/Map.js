@@ -1,14 +1,25 @@
 (function(window){
     function Map(){
         this.data = {};
+        this.size = 0;
     }
     Map.prototype.put = function(key,value){
         this.data[key] = value;
+        this.size++;
+    }
+
+    Map.prototype.size = function(){
+        return this.size;
+    }
+
+    Map.prototype.clear = function(){
+        this.data = {};
     }
 
     Map.prototype.remove = function(key){
         if(this.data.hasOwnProperty(key)){
             delete this.data[key];
+            this.size--;
             return true;
         }
         return false;
